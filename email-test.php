@@ -5,7 +5,7 @@ include 'email.php';
 
 if(count($_POST) > 0) {
 
-	$test = $_POST['test'];
+	$test = $_POST['teste'];
 
 	$handle = fopen('data/emails.txt', "a");
 	fwrite($handle, $test . "\n");
