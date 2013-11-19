@@ -1,6 +1,6 @@
 <?php
 
-$confirm (count($_POST) > 0) ? 'yes' : 'nope';
+$confirm = (count($_POST) > 0) ? 'yes' : 'nope';
 
 $data = implode($_POST);
 $email_text = $_POST['plain'];
