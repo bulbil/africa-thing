@@ -3,8 +3,15 @@ session_start();
 
 include 'email.php';
 
-var_dump($_SESSION);
-var_dump($_POST);
+if(count($_POST) > 0) {
+
+	$test = $_POST['test'];
+
+	$handle = fopen('data/emails.txt', "a");
+	fwrite($handle, $test . "\n");
+	fclose($handle);
+
+}
 
 $html = "<form action='email-test.php' method='post'>";
 $html .= "<input type='hidden' name='teste' value='chunk'>";
