@@ -8,7 +8,7 @@ $plain = $_POST['plain'];
 $html = $_POST['html'];
 $reply = $_POST['reply_plain'];
 
-if ($to == 'allowed@example.com'){
+if ($to == 'd1c1cc8ff02675728bf5@cloudmailin.net'){
 header("HTTP/1.0 200 OK");
 echo('success');
 }else{
