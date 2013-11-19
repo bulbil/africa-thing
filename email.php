@@ -15,4 +15,3 @@ echo('success');
 header("HTTP/1.0 403 OK");
 echo('user not allowed here');
 }
-exit;
