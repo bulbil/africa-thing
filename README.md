@@ -4,6 +4,6 @@ netart, dude.
 
 featuring:
 
-reveal.js
-d3.js
-cloudmailin api
+- reveal.js
+- d3.js
+- cloudmailin api
