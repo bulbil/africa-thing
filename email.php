@@ -2,7 +2,7 @@
 
 if(count($_POST) > 0) {
 
-	if(count($_POST) > 1)
+	if(count($_POST) > 1) {
 		$data = implode($_POST);
 		$email_text = $_POST['plain'];
 		$email_recepient = $_POST['headers']['To'];
@@ -12,13 +12,13 @@ if(count($_POST) > 0) {
 		$handle = fopen('data/emails.txt', "a");
 		fwrite($handle, $confirm . " | " . $data . "\n");
 		fclose($handle);
-
-	else{
+	}else{
 		$test = $_POST['teste'];
 		$handle = fopen('data/emails.txt', "a");
 		fwrite($handle, $test . "\n");
 		fclose($handle);
 	}
+
 }
 ?>
 <!-- // session_start();

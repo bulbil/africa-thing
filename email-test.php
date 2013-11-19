@@ -6,4 +6,5 @@ $html .= "<input type='hidden' name='teste' value='chunk'>";
 $html .= "<input type='submit'>";
 $html .= "</form>";
 
+echo(count($_POST));
 echo $html;
