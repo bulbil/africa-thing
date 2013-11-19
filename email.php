@@ -1,17 +1,17 @@
 <?php
-
+session_start();
 header("Content-type: text/plain");
 
+var_dump($_SESSION)
 $to = $_POST['envelope']['to'];
 $subject = $_POST['headers']['Subject'];
 $plain = $_POST['plain'];
 $html = $_POST['html'];
 $reply = $_POST['reply_plain'];
 
-if ($to == 'd1c1cc8ff02675728bf5@cloudmailin.net'){
+if (isset($to)){
+$_SESSION['emails'][] = $_POST;
 header("HTTP/1.0 200 OK");
-echo('success');
-}else{
-header("HTTP/1.0 403 OK");
-echo('user not allowed here');
+header('email-test.php');
 }
+exit;
