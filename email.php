@@ -1,14 +1,18 @@
 <?php
-  header("Content-type: text/plain");
 
-  $to = $_POST['envelope']['to'];
-  $subject = $_POST['headers']['Subject'];
-  $plain = $_POST['plain'];
-  $html = $_POST['html'];
-  $reply = $_POST['reply_plain'];
+header("Content-type: text/plain");
 
-	header("HTTP/1.0 200 OK");
-	echo('success');
-	var_dump($_POST);
+$to = $_POST['envelope']['to'];
+$subject = $_POST['headers']['Subject'];
+$plain = $_POST['plain'];
+$html = $_POST['html'];
+$reply = $_POST['reply_plain'];
 
-  exit;
+if ($to == 'allowed@example.com'){
+header("HTTP/1.0 200 OK");
+echo('success');
+}else{
+header("HTTP/1.0 403 OK");
+echo('user not allowed here');
+}
+exit;
