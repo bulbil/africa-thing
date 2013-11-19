@@ -8,7 +8,7 @@ fwrite($handle, $email_subject . "|" . $email_text . "|" . $email_sender . "\n")
 fclose($handle);
 ?>
 
-// session_start();
+<!-- // session_start();
 
 // if(count($_POST) > 0){
 
@@ -32,4 +32,4 @@ fclose($handle);
 // 		echo('what'); 
 
 // 	}
-// }
+// } -->
