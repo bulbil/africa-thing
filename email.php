@@ -2,7 +2,7 @@
 session_start();
 header("Content-type: text/plain");
 
-var_dump($_SESSION)
+var_dump($_SESSION);
 $to = $_POST['envelope']['to'];
 $subject = $_POST['headers']['Subject'];
 $plain = $_POST['plain'];
