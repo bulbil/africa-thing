@@ -1,5 +1,5 @@
 <?php
-$email_text = $_POST[['plain'];
+$email_text = $_POST['plain'];
 $email_recepient = $_POST['headers']['To'];
 $email_sender = $_POST['headers']['From'];
 $email_subject = $_POST['headers']['Subject'];
