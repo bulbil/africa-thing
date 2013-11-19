@@ -1,8 +1,6 @@
 <?php
 session_start();
 
-include 'email.php';
-
 if(count($_POST) > 0) {
 
 	$test = $_POST['teste'];
