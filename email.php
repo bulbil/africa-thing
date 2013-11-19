@@ -1,7 +1,8 @@
 <?php
-$email_text = $_POST['message'];
-$email_sender = $_POST['from'];
-$email_subject = $_POST['email'];
+$email_text = $_POST[['plain'];
+$email_recepient = $_POST['headers']['To'];
+$email_sender = $_POST['headers']['From'];
+$email_subject = $_POST['headers']['Subject'];
 
 $handle = fopen('data/emails.txt', "a");
 fwrite($handle, $email_subject . "|" . $email_text . "|" . $email_sender . "\n");
