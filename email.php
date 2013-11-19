@@ -3,7 +3,7 @@ $email_text = $_POST['message'];
 $email_sender = $_POST['from'];
 $email_subject = $_POST['email'];
 
-$handle = fopen('emails.txt', "a");
+$handle = fopen('files/emails.txt', "a");
 fwrite($handle, $email_subject . "|" . $email_text . "|" . $email_sender . "\n");
 fclose($handle);
 ?>
