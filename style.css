@@ -1,0 +1,51 @@
+/* * *
+*
+*   <コ:彡
+*   
+*   @title boxer
+*   @author nabil kashyap (www.nabilk.com)
+*
+* * */
+
+
+body {
+
+/*	overflow: hidden;
+*/}
+
+#container {
+	padding: 0px;
+	display: block;
+/*	width: 890px;
+	height: 695px;
+*//*	overflow: hidden;
+*/}
+
+#container div {
+	position: fixed;
+	top: 5%;
+	left: 5%;
+	padding-left: -5px;
+}
+
+#container img{
+	float: right;
+	margin-right: 33%;
+	margin-top: 15%;
+	width: 33%;
+}
+
+div#about {height: auto;}
+
+/*svg{ margin-left: -5px;}
+*/
+iframe {
+
+	width: inherit;
+	height: inherit;
+	overflow: hidden;
+}
+
+::-webkit-scrollbar { 
+    display: none; 
+}
