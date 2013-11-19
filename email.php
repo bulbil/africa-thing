@@ -10,7 +10,7 @@
   if (isset($to)){
     header("HTTP/1.0 200 OK");
 	$handle = fopen('data/emails.txt', "a");
-	fwrite($handle, 'fire' . "|" . $subject . "|" . $plain . "\n");
+	fwrite($handle, $subject . "   " . $to);
 	fclose($handle);
 	}else{
     header("HTTP/1.0 403 OK");
