@@ -2,37 +2,31 @@
 *
 *   <コ:彡
 *   
-*   @title boxer
+*   @title africa-thing
 *   @author nabil kashyap (www.nabilk.com)
 *
 * * */
 
 
-body {
+div #container {
 
-/*	overflow: hidden;
-*/}
-
-#container {
 	padding: 0px;
-	display: block;
-/*	width: 890px;
-	height: 695px;
-*//*	overflow: hidden;
-*/}
-
-#container div {
-	position: fixed;
 	top: 5%;
 	left: 5%;
 	padding-left: -5px;
 }
 
-#container img{
-	float: right;
-	margin-right: 33%;
-	margin-top: 15%;
+#container div.group{
+	position: fixed;
+	border: 1px solid #f00;
 	width: 33%;
+	margin-top: 15%;
+	margin-left: 33%;
+}
+
+#container div.group img{
+
+	width: 100%;
 }
 
 div#about {height: auto;}
