@@ -15,7 +15,7 @@ if (isset($to)){
 	$handle = fopen("data/emails.txt", "a");
 	fwrite($handle, post_format($subject,'subject') . "," 
                   . post_format($from) . ","
-                  . post_format($plain) . ",\n");
+                  . post_format($plain,'plain') . ",\n");
 	fclose($handle);
 }else{
   header("HTTP/1.0 403 OK");
