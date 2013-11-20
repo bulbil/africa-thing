@@ -30,6 +30,6 @@ function post_format($str, $p = 'default') {
     case('default'): return $str;
     case('from'): return $str;
     case('subject'): return addslashes(strtolower($str));
-    case('plain'): return preg_replace('/\n|\r|\r\n/', " ", $str);
+    case('plain'): return preg_replace('/\n+|[\n\r]+/', " ", $str);
   }
 }
