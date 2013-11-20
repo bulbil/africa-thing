@@ -29,5 +29,6 @@ function post_format($str, $p = 'default') {
     case('default'): return $str;
     case('from'): return $str;
     case('subject'): return addslashes(strtolower($str));
+    case('plain'): return str_replace("/\n/", " ", $str);
   }
 }
