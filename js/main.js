@@ -67,7 +67,7 @@ var webcam = new Jscii({
 
 	container: document.getElementById("jscii-webrtc"),
 	el: document.getElementById("webrtc"),
-	webrtc: false
+	webrtc: true
 });
 
 $(document).keydown(function(d) { 
