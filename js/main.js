@@ -12,7 +12,7 @@ var at = {
 
 	index: function(){
 
-		$.getJSON('http://localhost:8888/sftp/africa-thing/json.php', function(d){
+		$.getJSON('json.php', function(d){
 
 			for (i in d) {
 				var tag = d[i].subject;
