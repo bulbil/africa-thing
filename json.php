@@ -1,12 +1,12 @@
 <?php
+$columns = array('subject', 'from', 'plain');
+$handle = fopen("data/emails.txt", "r");
 
-  	$handle = fopen("data/emails.txt", "r");
+while($row = fgetcsv($handle)) {
+	if(count($row) > 1)	$csv[] = array_combine($columns, $row);
+}
 
-  	while($subject = fgets($handle)) {
+fclose($handle);
 
-	  	$subjects[] = trim($subject);
-  	}
-
-  	fclose($handle);
-  	$json = json_encode($subjects);
-  	echo $json;
+$json = json_encode($csv);
+echo $json;

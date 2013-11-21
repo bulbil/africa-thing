@@ -1,0 +1,64 @@
+/* * *
+*
+*   <コ:彡
+*   
+*   @title africa-thing
+*   @author nabil kashyap (www.nabilk.com)
+*
+* * */
+
+body {
+
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	overflow: hidden;
+	background: #E6E4EE;
+}
+
+#container {
+	height: 100%;
+	width: 300%
+}
+
+#container div.panel {
+
+	display: inline-block;
+	max-height: 100%;
+	width: 33%;
+	z-index: 0;
+	overflow: hidden;
+}
+
+video#webrtc { display: none;}
+
+div#video-frame {
+	width: 100%;
+	z-index: -1;
+}
+
+pre#jscii-webrtc {
+	margin-top: -33%;
+	font: 12px monospace;
+	color: #fff;
+	height: inherit;
+}
+
+div#overlay img.flickr{
+	position: fixed;
+	display: block;
+	width: 33%;
+	margin-left: 33%;
+	margin-top: 20%;
+}
+
+h1{
+	font: 8em "minion-pro";
+	font-style: italic;
+	vertical-align: top;
+	opacity: .75;
+	margin: 1em;
+	padding: .5em;
+}
