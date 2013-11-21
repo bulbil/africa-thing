@@ -20,8 +20,7 @@ var at = {
 				}
 			});
 
-		function purge() { console.log('purge'); at.photos = []; }
-		purge();
+		at.photos = [];
 		},
 
 	updatePhotos: function(tag) {
@@ -36,29 +35,29 @@ var at = {
 
 	addPhotos: function() {
 
-		var overlay = d3.select("div#overlay").selectAll("img.flickr")
-			.data(at.photos, function() { console.log(at.photos); });
+		var overlay = d3.select("div#overlay").selectAll("div.flickr")
+			.data(at.photos);
 
 		overlay.exit()
 			.transition()
-			.duration(function(d) { console.log('Exit'); return 100;})
+			.duration(function(d, i) { console.log('Exit'); return 500 * i;})
 			.style("opacity", 0)			
 			.remove();
 
 		overlay.enter()
-			.append("img")
+			.append("div")
 			.attr("class", "flickr")
+			.style("height", function() { return $(document).height()/2 + 'px'; })
 			.style("opacity", 0)
 			.transition()
-			.duration(5000 * at.photos.length)
-			.style("opacity", 1)
-			.transition()
-			.style("opacity", 0)			
-			.remove();
+			.duration(1000 * at.photos.length)
+			.style("opacity", 1);
+			// .transition()
+			// .style("opacity", 0)			
+			// .remove();
 
-		overlay.property("src", function(d){
-				return "http://farm" + d.farm + ".staticflickr.com/" + d.server + "/" + d.id + "_" + d.secret + ".jpg";
-			});
+		overlay.style("background-image", function(d) {
+			return 'url("http://farm' + d.farm + '.staticflickr.com/' + d.server + '/' + d.id + '_' + d.secret + '.jpg")'; });
 		}
 	}
 
@@ -68,7 +67,7 @@ var webcam = new Jscii({
 
 	container: document.getElementById("jscii-webrtc"),
 	el: document.getElementById("webrtc"),
-	webrtc: true
+	webrtc: false
 });
 
 $(document).keydown(function(d) { 

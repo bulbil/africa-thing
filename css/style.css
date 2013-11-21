@@ -40,18 +40,19 @@ div#video-frame {
 }
 
 pre#jscii-webrtc {
-	margin-top: -33%;
-	font: 12px monospace;
-	color: #fff;
+	margin-top: -50%;
+	font: 1.5em monospace;
+	color: #000;
 	height: inherit;
 }
 
-div#overlay img.flickr{
+div.flickr{
 	position: fixed;
 	display: block;
+	background-repeat: no-repeat;
 	width: 33%;
 	margin-left: 33%;
-	margin-top: 20%;
+	margin-top: 15%;
 }
 
 h1{
