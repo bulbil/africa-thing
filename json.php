@@ -13,8 +13,8 @@ while($row = fgetcsv($handle)) {
 fclose($handle);
 
 if(count($csv > 10)) { 
-	$csv = array_reverse($csv);
-	$csv = array_chunk($csv, 10)[0];
+	$csv = array_chunk(array_reverse($csv), 10);
+	$csv = $csv[0];
 }
 
 $row_check = (isset($_SESSION['row_check'])) ? $_SESSION['row_check'] : $i;
