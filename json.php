@@ -6,11 +6,16 @@ $columns = array('subject', 'from', 'plain');
 $i = 0;
 while($row = fgetcsv($handle)) {
 
-	if(count($row) > 1 && $i < 10) $csv[] = array_combine($columns, $row);
+	$csv[] = array_combine($columns, $row);
 	$i++;
 }
 
 fclose($handle);
+
+if(count($csv > 10)) { 
+	$csv = array_reverse($csv);
+	$csv = array_chunk($csv, 10)[0];
+}
 
 $row_check = (isset($_SESSION['row_check'])) ? $_SESSION['row_check'] : $i;
 unset($_SESSION['row_check']);
