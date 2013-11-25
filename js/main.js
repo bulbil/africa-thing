@@ -12,7 +12,7 @@ var at = {
 
 	index: function(){
 
-		$.getJSON('www.nabilk.com/africa-thing/json.php', function(d){
+		$.getJSON('http://www.nabilk.com/africa-thing/json.php', function(d){
 
 			if(d.row_count !== d.row_check) {
 				for (i in d.emails) {
@@ -69,7 +69,7 @@ var webcam = new Jscii({
 
 	container: document.getElementById("jscii-webrtc"),
 	el: document.getElementById("webrtc"),
-	webrtc: false
+	webrtc: true
 });
 
 $(document).keydown(function(d) { 
