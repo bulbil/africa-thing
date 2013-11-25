@@ -12,12 +12,14 @@ var at = {
 
 	index: function(){
 
-		$.getJSON('json.php', function(d){
+		$.getJSON('www.nabilk.com/africa-thing/json.php', function(d){
 
-			for (i in d) {
-				var tag = d[i].subject;
-				at.updatePhotos(tag);
-				}
+			if(d.row_count !== d.row_check) {
+				for (i in d.emails) {
+					var tag = d.emails[i].subject;
+					at.updatePhotos(tag);
+					}
+			}
 			});
 
 		at.photos = [];
@@ -67,7 +69,7 @@ var webcam = new Jscii({
 
 	container: document.getElementById("jscii-webrtc"),
 	el: document.getElementById("webrtc"),
-	webrtc: true
+	webrtc: false
 });
 
 $(document).keydown(function(d) { 

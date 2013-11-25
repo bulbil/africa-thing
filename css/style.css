@@ -40,7 +40,8 @@ div#video-frame {
 }
 
 pre#jscii-webrtc {
-	margin-top: -50%;
+	margin-top: -100%;
+	margin-left: -125%;
 	font: 1.5em monospace;
 	color: #000;
 	height: inherit;
