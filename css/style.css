@@ -47,13 +47,19 @@ pre#jscii-webrtc {
 	height: inherit;
 }
 
-div.flickr{
+div.flickr {
 	position: fixed;
 	display: block;
 	background-repeat: no-repeat;
 	width: 33%;
 	margin-left: 33%;
 	margin-top: 15%;
+	overflow: hidden;
+}
+
+div.flickr img {
+	width: 120%;
+	margin: -10% -10%;
 }
 
 h1{
