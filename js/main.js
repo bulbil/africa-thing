@@ -12,7 +12,7 @@ var at = {
 
 	index: function(bool){
 
-		$.getJSON('json.php', function(d){
+		$.getJSON('http://www.nabilk.com/africa-thing/json.php?callback=?', function(d){
 
 			console.log('fire go' + bool);
 			if(bool === false) {
@@ -98,7 +98,8 @@ at.videoFeed = new Jscii({
 
 });
 
-var bool = false;
+var flickrBool = false;
+var videoBool = true;
 
 $(document).keydown(function(d) { 
 
@@ -116,14 +117,32 @@ $(document).keydown(function(d) {
 
 		case(37): skipAround(xCurrent - panelWidth); break;
 		case(39): skipAround(xCurrent + panelWidth); break;
-		case(13): at.videoFeed.play(); break;
-		case(32): at.videoFeed.pause(); break;
+		case(32): 
+
+			videoBool = !videoBool;
+			if(videoBool) at.videoFeed.play();
+			else at.videoFeed.pause();
+			break;
+
 		case(83):
 
-			if(!bool) clearInterval(at.indexTimer);
-			at.indexTimer = setInterval( function() { at.index(bool); }, 6000);			
-			bool = !bool;
+			if(!flickrBool) clearInterval(at.indexTimer);
+			at.indexTimer = setInterval( function() { at.index(flickrBool); }, 6000);			
+			flickrBool = !flickrBool;
 			break;
 	}
 
 	;})
+
+var iframeBool = false;
+
+$("div.iframe").click(function() { 
+
+	iframeBool = !iframeBool;
+	$("iframe").attr("src", function() { 
+		url = (iframeBool) ? "http://www.marrakeshdining.com/" : "img/shabir_snake_charmer.jpg"; 
+		return url;
+		});
+
+});
+

@@ -24,6 +24,6 @@ $data = array('row_count' => $i, 'row_check' => $row_check, 'emails' => $csv);
 
 $json = json_encode($data);
 
-echo $json;
+echo $_GET['callback'] . '(' . $json . ')';
 
 $_SESSION['row_check'] = $i;
