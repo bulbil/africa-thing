@@ -1,5 +1,7 @@
 <?php
 session_start();
+header("Content-type: text/plain");
+
 $handle = fopen("data/emails.txt", "r");
 $columns = array('subject', 'from', 'plain');
 

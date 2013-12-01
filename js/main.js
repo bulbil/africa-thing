@@ -8,13 +8,15 @@
 
 var at = {
 
+	width: $(window).width(),
+	panels: $("div.panel").size(),
+	border: $(window).width() / $("div.panel").size(),
 	photos: [],
 
 	index: function(bool){
 
 		$.getJSON('http://www.nabilk.com/africa-thing/json.php?callback=?', function(d){
 
-			console.log('fire go' + bool);
 			if(bool === false) {
 
 				if(d.row_count !== d.row_check) at.updatePhotos(d,'change');
@@ -24,8 +26,7 @@ var at = {
 			
 			at.photos = [];
 
-		});
-		
+		});		
 	},
 
 	updatePhotos: function(d,p) {
@@ -101,21 +102,31 @@ at.videoFeed = new Jscii({
 var flickrBool = false;
 var videoBool = true;
 
+$(document).ready(function(){
+	$("div.panel").css("width", at.width + at.border);
+	$(".panel div.inner").css("width", at.width);
+	$("body").css("width", (at.panels + 1) * at.width);
+});
+
 $(document).keydown(function(d) { 
 
-	var panelWidth = $(document).width() / $("div.panel").size();
-	console.log('keyCode ' + d.keyCode);
-	var xCurrent = $(document).scrollLeft();
+	// console.log('keyCode ' + d.keyCode);
+	var xCurrent = $(window).scrollLeft();
+	var panelWidth = at.width + at.border;
 
 	function skipAround(offset){
 		offset = (offset < 0) ? 0 : offset;
+		var end = $("body").width() - panelWidth;
+		if(offset > end) offset = xCurrent;
 	    $('html,body').animate( {scrollLeft: offset } , 'slow');
 	}
 
 
 	switch(d.keyCode) {
 
+		case(74):
 		case(37): skipAround(xCurrent - panelWidth); break;
+		case(76):
 		case(39): skipAround(xCurrent + panelWidth); break;
 		case(32): 
 
@@ -130,6 +141,9 @@ $(document).keydown(function(d) {
 			at.indexTimer = setInterval( function() { at.index(flickrBool); }, 6000);			
 			flickrBool = !flickrBool;
 			break;
+
+		case(40): console.log(xCurrent); break;
+
 	}
 
 	;})
@@ -146,3 +160,7 @@ $("div.iframe").click(function() {
 
 });
 
+	function skipAround(offset){
+		offset = (offset < 0) ? 0 : offset;
+	    $('html,body').animate( {scrollLeft: offset } , 'slow');
+	}

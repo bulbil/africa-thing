@@ -16,29 +16,26 @@ body {
 	left: 0;
 	right: 0;
 	overflow: hidden;
-	background: #E6E4EE;
 	font-family: "minion-pro";
 	font-size: 1em;
-	width: 700%;
-	margin: 0;
-	padding: 0;
 }
 
 #container {
 	height: 100%;
-	margin: 0;
-	padding: 0;
 }
 
-#container div.panel {
+div.panel, div.inner {
 
 	display: inline-block;
+	float: left;
 	height: 100%;
-	width: 14.25%;
 	z-index: 0;
-	margin: 0;
-	padding: 0;
 	overflow: hidden;
+	background: #E6E4EE;
+}
+
+div.panel {
+	background: #fff;
 }
 
 video#webrtc { display: none;}
@@ -56,7 +53,7 @@ pre#jscii-webrtc {
 
 	margin-top: -25%;
 	margin-left: -150%;
-	font: 1em monospace;
+	font: .75em "minion-pro";
 	color: #000;
 	height: inherit;
 }
@@ -80,7 +77,6 @@ div.flickr img {
 
 div.single-img,
 div.double-img {
-
 	float: left;
 	width: 34%;
 	margin-left: 11%;
@@ -95,17 +91,9 @@ div.double-img img{
 }
 
 div.single-img img{
-	
+
 	padding-left: 0px;
 	width: 100%;
-}
-
-div.double-img h3, div.single-img h3 {
-	
-	float: right;
-	font-size: 300%;
-	font-style: italic;
-	opacity: .75;
 }
 
 div.title{
@@ -116,9 +104,9 @@ div.title{
 	margin-top: 7%;
 }
 
-#two div.title { margin-left: 22%;}
-#six div.title { margin-left: 39%;}
-#six { color: #c9ebf2; background: #2477bf; opacity: .8;}
+#three div.title { margin-left: 22%;}
+#seven .inner div.title { margin-left: 39%;}
+#seven .inner { color: #c9ebf2; background: #2477bf; opacity: .8;}
 
 h1{
 	display: inline-block;
@@ -126,6 +114,13 @@ h1{
 	font-style: italic;
 	opacity: .75;
 	padding-left: .075em;
+}
+
+h2 {
+	
+	float: right;
+	font-size: 300%;
+	opacity: .75;
 }
 
 div.iframe {
