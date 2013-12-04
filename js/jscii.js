@@ -17,10 +17,8 @@
 	 * note: the extra &nbsp; is to account for the value range inclusive of 100%
 	 */
 	// var chars = ['@','#','$','=','*','!',';',':','~','-',',','.','&nbsp;', '&nbsp;'];
-	// var chars = ['this ', '&nbsp;', 'in ', '&nbsp;', 'which ','&nbsp;', 'the ', 'deer ', '&nbsp;', 'small ',  '&nbsp;', 'startle ', '&nbsp;', 'and ', '&nbsp;', 'stare ', '&nbsp;', 'out ', '&nbsp;'];
-	
-	// var chars = ['&nbsp;','&nbsp;','africa ', 'to ', 'that ',  'have ', 'from ', 'seen ', 'you ' ];
-	var chars = ['&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;', 'africa ', 'have&nbsp;', 'you&nbsp;&nbsp;', 'seen&nbsp;', 'to&nbsp;&nbsp;&nbsp;', 'from&nbsp;', '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'];
+
+	var chars = ['were&nbsp;', 'you&nbsp;&nbsp;', 'africa&nbsp;', 'along&nbsp;', '&nbsp;&nbsp;a&nbsp;&nbsp;', 'road&nbsp;', 'or&nbsp;&nbsp;&nbsp;', '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;', 'through&nbsp;', 'seen&nbsp;', 'it&nbsp;&nbsp;&nbsp;'];
 	
 	var charLen = chars.length-1;
 	function getChar(val) { return chars[parseInt(val*charLen, 10)]; }
