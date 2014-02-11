@@ -11,6 +11,7 @@ var at = {
 	width: $(window).width(),
 	panels: $("div.panel").size(),
 	border: $(window).width() / $("div.panel").size(),
+	anchors: [],
 
 	resize: function() {
 
